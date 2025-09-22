@@ -3,7 +3,7 @@ from django.shortcuts import render
 # Hardcoded data for simplicity
 # --- EVENT DATA ---
 event_data = [
-    {'title': 'CodeSprint 2025', 'date': 'Oct 15, 2025', 'desc': 'A 24-hour competitive programming marathon. Sharpen your algorithms and data structures skills.', 'image': 'https://images.unsplash.com/photo-1542831371-29b0f74f9713?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=1200'},
+    {'title': 'Algorithmic Sprint 2025', 'date': 'Oct 15, 2025', 'desc': 'A 24-hour competitive python programming marathon. Sharpen your algorithmic thinking with python skills.', 'image': 'https://images.unsplash.com/photo-1542831371-29b0f74f9713?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=1200'},
     {'title': 'AI & ML Workshop', 'date': 'Nov 02, 2025', 'desc': 'Dive into the world of Artificial Intelligence with hands-on sessions on TensorFlow and PyTorch.', 'image': 'https://images.unsplash.com/photo-1620712943543-2703222e3ae7?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=1200'},
     {'title': 'CyberSec Summit', 'date': 'Nov 18, 2025', 'desc': 'Learn about ethical hacking, network security, and cryptography from industry experts.', 'image': 'https://images.unsplash.com/photo-1550751827-4138d04d420d?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=1200'},
     {'title': 'Intro to Django', 'date': 'Dec 05, 2025', 'desc': 'Build and deploy your first web application with Python and Django. A beginner-friendly workshop.', 'image': 'https://images.unsplash.com/photo-1618423691278-c0705051827b?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=1200'},
@@ -13,15 +13,15 @@ event_data = [
 
 # --- TEAM DATA ---
 team_data = {
-    'advisor': {'name': 'Dr. Evelyn Reed', 'role': 'Faculty Advisor', 'img': 'https://i.pravatar.cc/300?u=advisor', 'linkedin': '#', 'github': '#'},
+    'advisor': {'name': 'Dr. Syam Sankar', 'role': 'Faculty Advisor', 'img': 'https://raw.githubusercontent.com/basithalikp/image-cdn/refs/heads/main/acm/syamSankar.png', 'linkedin': 'https://www.linkedin.com/in/syam-sankar-134b70110/', 'github': '#'},
     'core': [
-        {'name': 'Alex Johnson', 'role': 'Chairperson', 'img': 'https://i.pravatar.cc/300?u=chair', 'linkedin': '#', 'github': '#'},
-        {'name': 'Maria Garcia', 'role': 'Vice Chairperson', 'img': 'https://i.pravatar.cc/300?u=vicechair', 'linkedin': '#', 'github': '#'},
-        {'name': 'Chen Wei', 'role': 'Secretary', 'img': 'https://i.pravatar.cc/300?u=secretary', 'linkedin': '#', 'github': '#'},
-        {'name': 'Samira Khan', 'role': 'Treasurer', 'img': 'https://i.pravatar.cc/300?u=treasurer', 'linkedin': '#', 'github': '#'},
+        {'name': 'Bensen Biju', 'role': 'Chairperson', 'img': 'https://i.pravatar.cc/300?u=chair', 'linkedin': '#', 'github': '#'},
+        {'name': 'Anna Rose', 'role': 'Vice Chairperson', 'img': 'https://i.pravatar.cc/300?u=vicechair', 'linkedin': '#', 'github': '#'},
+        {'name': 'Christy Sebastian', 'role': 'Secretary', 'img': 'https://i.pravatar.cc/300?u=secretary', 'linkedin': '#', 'github': '#'},
+        {'name': 'Drisya A', 'role': 'Treasurer', 'img': 'https://i.pravatar.cc/300?u=treasurer', 'linkedin': '#', 'github': '#'},
     ],
     'tech': [
-        {'name': 'Leo Martinez', 'role': 'Tech Head', 'img': 'https://i.pravatar.cc/300?u=techhead', 'linkedin': '#', 'github': '#'},
+        {'name': 'Basith Ali KP', 'role': 'Tech Head', 'img': 'https://i.pravatar.cc/300?u=techhead', 'linkedin': '#', 'github': '#'},
         {'name': 'Chloe Davis', 'role': 'Tech Member', 'img': 'https://i.pravatar.cc/300?u=tech1', 'linkedin': '#', 'github': '#'},
         {'name': 'Ben Carter', 'role': 'Tech Member', 'img': 'https://i.pravatar.cc/300?u=tech2', 'linkedin': '#', 'github': '#'},
     ],
