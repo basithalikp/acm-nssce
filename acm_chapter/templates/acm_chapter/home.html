@@ -1,0 +1,68 @@
+{% extends "acm_chapter/base.html" %}
+{% block content %}
+
+<section class="hero-section">
+    <h1 class="main-heading">NSSCE<br><span class="gradient-text">ACM Student Chapter</span></h1>
+    <p class="sub-heading">NSSCE's premier organization for Computer Science and Information Technology.</p>
+</section>
+
+<section class="intro-section">
+    <h2>Empowering Tomorrow's Innovators</h2>
+    <p>NSSCE ACM is your gateway to cutting-edge tech, fostering a collaborative space for students to explore AI, coding, and cybersecurity through workshops, hackathons, and networking.</p>
+</section>
+
+<section class="home-deck-section">
+    <div class="deck-header">
+        <h2><a href="{% url 'events' %}">Upcoming Events</a></h2>
+        <a href="{% url 'events' %}" class="btn-gradient">More Events <i class="fas fa-arrow-right"></i></a>
+    </div>
+    <div class="card-deck-container liquid-glass">
+        <div class="card-deck horizontal-scroll">
+            {% for event in events %}
+            <div class="card event-card">
+                <img src="{{ event.image }}" alt="{{ event.title }}" class="card-img" loading="lazy">
+                <div class="card-body">
+                    <h3 class="card-title">{{ event.title }}</h3>
+                    <p class="card-date">{{ event.date }}</p>
+                    <p class="card-text">{{ event.desc }}</p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<section class="home-deck-section">
+    <div class="deck-header">
+        <h2><a href="{% url 'team' %}">Meet The Team</a></h2>
+        <a href="{% url 'team' %}" class="btn-gradient">More Members <i class="fas fa-arrow-right"></i></a>
+    </div>
+    <div class="card-deck-container liquid-glass">
+        <div class="card-deck horizontal-scroll">
+            {% for member in team_leads %}
+            <div class="card team-card">
+                <img src="{{ member.img }}" alt="{{ member.name }}" class="card-img-top" loading="lazy">
+                <div class="card-body">
+                    <h3 class="card-title-team">{{ member.name }}</h3>
+                    <p class="card-text-role">{{ member.role }}</p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<section class="join-us-section">
+    <h2>Why Join Us?</h2>
+    <div class="benefits-container">
+        <ul>
+            <li><i class="fas fa-check-circle"></i> Access exclusive workshops & seminars.</li>
+            <li><i class="fas fa-check-circle"></i> Network with industry professionals and peers.</li>
+            <li><i class="fas fa-check-circle"></i> Build your portfolio with hands-on projects.</li>
+            <li><i class="fas fa-check-circle"></i> Compete in national and international contests.</li>
+        </ul>
+        <a href="{% url 'about' %}" class="btn-gradient">Learn More & Join</a>
+    </div>
+</section>
+
+{% endblock %}

@@ -1,0 +1,4 @@
+# acm_project/requirements.txt
+Django>=5.0
+gunicorn
+whitenoise

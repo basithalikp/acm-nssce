@@ -1,0 +1,26 @@
+{% extends "acm_chapter/base.html" %}
+{% block content %}
+
+<section class="page-section">
+    <h1 class="page-heading gradient-text">Our Events</h1>
+    <p class="page-subheading">A look at our past, present, and future workshops, competitions, and seminars.</p>
+    
+    <div class="events-grid-container liquid-glass">
+        <div class="events-grid">
+            {% for event in events %}
+            <div class="card event-card-full">
+                <div class="card-img-container">
+                    <img src="{{ event.image }}" alt="{{ event.title }}" class="card-img" loading="lazy">
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title">{{ event.title }}</h3>
+                    <p class="card-date">{{ event.date }}</p>
+                    <p class="card-text">{{ event.desc }}</p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+{% endblock %}

@@ -1,0 +1,54 @@
+{% extends "acm_chapter/base.html" %}
+{% block content %}
+
+<section class="page-section">
+    <h1 class="page-heading gradient-text">Our Team</h1>
+    <p class="page-subheading">The driving force behind the NSSCE ACM Student Chapter.</p>
+
+    <h2 class="team-sub-heading">Faculty Advisor</h2>
+    <div class="team-grid-container single-card liquid-glass">
+        <div class="card team-card-full">
+            <img src="{{ team.advisor.img }}" alt="{{ team.advisor.name }}" class="card-img-top" loading="lazy">
+            <div class="card-body">
+                <h3 class="card-title-team">{{ team.advisor.name }}</h3>
+                <p class="card-text-role">{{ team.advisor.role }}</p>
+                <div class="team-socials">
+                    <a href="{{ team.advisor.linkedin }}" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="{{ team.advisor.github }}" target="_blank"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    {% for category_key, members in team.items %}
+        {% if category_key != 'advisor' %}
+            <h2 class="team-sub-heading">
+                {% if category_key == 'core' %}Core Committee
+                {% elif category_key == 'tech' %}Tech Team
+                {% elif category_key == 'design' %}Design Team
+                {% elif category_key == 'membership' %}Membership Advisors
+                {% elif category_key == 'media' %}Media Team
+                {% elif category_key == 'content' %}Content Team
+                {% endif %}
+            </h2>
+            <div class="team-grid-container liquid-glass">
+                <div class="team-grid">
+                    {% for member in members %}
+                    <div class="card team-card-full">
+                        <img src="{{ member.img }}" alt="{{ member.name }}" class="card-img-top" loading="lazy">
+                        <div class="card-body">
+                            <h3 class="card-title-team">{{ member.name }}</h3>
+                            <p class="card-text-role">{{ member.role }}</p>
+                            <div class="team-socials">
+                                <a href="{{ member.linkedin }}" target="_blank"><i class="fab fa-linkedin"></i></a>
+                                <a href="{{ member.github }}" target="_blank"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        {% endif %}
+    {% endfor %}
+</section>
+{% endblock %}
