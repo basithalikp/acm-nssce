@@ -21,10 +21,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 's!w$d*58xyh=lvjw4$wezrlpwi%oilfpq!n&i5k45i^7y=xk-h@3nk9*hboiue9*&H'
+SECRET_KEY = os.environ.get('SECRET_KEY', 'a-default-secret-key-for-local-dev')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = os.environ.get('DEBUG', 'False').lower() == 'true'
 
 ALLOWED_HOSTS = ['0.0.0.0']
 RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
@@ -75,8 +75,13 @@ TEMPLATES = [
 WSGI_APPLICATION = 'acm_website.wsgi.application'
 
 
-# No database needed for this static site
-DATABASES = {}
+# Since this site doesn't use a database, we configure a dummy engine
+# to prevent Django from throwing an ImproperlyConfigured error.
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.dummy',
+    }
+}
 
 
 # Password validation
