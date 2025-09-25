@@ -4,51 +4,60 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- Parallax Effect on Background ---
     const parallaxBg = document.querySelector('.parallax-bg');
-    window.addEventListener('scroll', () => {
-        const offset = window.pageYOffset;
-        parallaxBg.style.transform = `translateY(${offset * 0.3}px)`;
-    });
+    if (parallaxBg) {
+        window.addEventListener('scroll', () => {
+            const offset = window.pageYOffset;
+            parallaxBg.style.transform = `translateY(${offset * 0.3}px)`;
+        });
+    }
 
     // --- Mobile Navigation (Hamburger Menu) ---
-    const hamburger = document.getElementById('hamburger');
-    const navLinks = document.getElementById('nav-links');
-    hamburger.addEventListener('click', () => {
-        navLinks.classList.toggle('active');
-    });
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
 
-    // --- Smooth Scrolling for Navbar Links (if needed for one-page layout) ---
-    // Since this is a multi-page app, this is not strictly necessary but good practice.
+    if (hamburger && navLinks) {
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+    }
+
+    // --- Smooth Scrolling for Navbar Links ---
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
-            document.querySelector(this.getAttribute('href')).scrollIntoView({
-                behavior: 'smooth'
-            });
+            const targetElement = document.querySelector(this.getAttribute('href'));
+            if (targetElement) {
+                targetElement.scrollIntoView({
+                    behavior: 'smooth'
+                });
+            }
         });
     });
 
     // --- Scroll Animations (Fade-in sections) ---
     const sections = document.querySelectorAll('section');
-    const observerOptions = {
-        root: null,
-        rootMargin: '0px',
-        threshold: 0.1
-    };
+    if (sections.length > 0) {
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
 
-    const sectionObserver = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('is-visible');
-                observer.unobserve(entry.target);
-            }
+        const sectionObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        sections.forEach(section => {
+            sectionObserver.observe(section);
         });
-    }, observerOptions);
+    }
 
-    sections.forEach(section => {
-        sectionObserver.observe(section);
-    });
-
-    // --- Card Hover Tilt Effect (Optional, but adds a nice touch) ---
+    // --- Card Hover Tilt Effect ---
     const cards = document.querySelectorAll('.card');
     cards.forEach(card => {
         card.addEventListener('mousemove', (e) => {
