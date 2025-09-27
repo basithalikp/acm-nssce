@@ -24,9 +24,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get('SECRET_KEY', 'a-default-secret-key-for-local-dev')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.environ.get('DEBUG', 'False').lower() == 'true'
+# DEBUG = os.environ.get('DEBUG', 'False').lower() == 'true'
 
-# DEBUG = True
+DEBUG = True
 
 ALLOWED_HOSTS = []
 RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
@@ -112,6 +112,7 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'acm_chapter', 'static'),
 ]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  # For production deployment
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # Add whitenoise storage for static files
 STORAGES = {

@@ -1,19 +1,20 @@
 from django.shortcuts import render
+from django.templatetags.static import static
 
 # Hardcoded data for simplicity
 # --- EVENT DATA ---
 event_data = [
     {'title': 'Algorithmic Sprint 2025', 'date': 'Oct 15, 2025', 'desc': 'A 24-hour competitive python programming marathon. Sharpen your algorithmic thinking with python skills.', 'image': 'https://images.unsplash.com/photo-1542831371-29b0f74f9713?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=1200'},
-    {'title': 'AI & ML Workshop', 'date': 'Nov 02, 2025', 'desc': 'Dive into the world of Artificial Intelligence with hands-on sessions on TensorFlow and PyTorch.', 'image': 'https://github.com/basithalikp/image-cdn/blob/main/acm/AIandML.jpg?raw=true'},
-    {'title': 'CyberSec Summit', 'date': 'Nov 18, 2025', 'desc': 'Learn about ethical hacking, network security, and cryptography from industry experts.', 'image': 'https://github.com/basithalikp/image-cdn/blob/main/acm/cyberSecurity.jpg?raw=true'},
-    {'title': 'Intro to Django', 'date': 'Dec 05, 2025', 'desc': 'Build and deploy your first web application with Python and Django. A beginner-friendly workshop.', 'image': 'https://github.com/basithalikp/image-cdn/blob/main/acm/introToDjango.jpg?raw=true'},
-    {'title': 'UI/UX Design Principles', 'date': 'Jan 10, 2026', 'desc': 'Master the fundamentals of user interface and user experience design with Figma.', 'image': 'https://github.com/basithalikp/image-cdn/blob/main/acm/uiUxDesignPrinciples.jpg?raw=true'},
-    {'title': 'Cloud Computing with AWS', 'date': 'Feb 22, 2026', 'desc': 'Explore cloud services and infrastructure with Amazon Web Services (AWS).', 'image': 'https://github.com/basithalikp/image-cdn/blob/main/acm/cloudComputing.jpg?raw=true'},
+    {'title': 'AI & ML Workshop', 'date': 'Nov 02, 2025', 'desc': 'Dive into the world of Artificial Intelligence with hands-on sessions on TensorFlow and PyTorch.', 'image': static('acm_chapter/images/AIandML.jpg')},
+    {'title': 'CyberSec Summit', 'date': 'Nov 18, 2025', 'desc': 'Learn about ethical hacking, network security, and cryptography from industry experts.', 'image': static('acm_chapter/images/cyberSecurity.jpg')},
+    {'title': 'Intro to Django', 'date': 'Dec 05, 2025', 'desc': 'Build and deploy your first web application with Python and Django. A beginner-friendly workshop.', 'image': static('acm_chapter/images/introToDjango.jpg')},
+    {'title': 'UI/UX Design Principles', 'date': 'Jan 10, 2026', 'desc': 'Master the fundamentals of user interface and user experience design with Figma.', 'image': static('acm_chapter/images/uiUxDesignPrinciples.jpg')},
+    {'title': 'Cloud Computing with AWS', 'date': 'Feb 22, 2026', 'desc': 'Explore cloud services and infrastructure with Amazon Web Services (AWS).', 'image': static('acm_chapter/images/cloudComputing.jpg')},
 ]
 
 # --- TEAM DATA ---
 team_data = {
-    'advisor': {'name': 'Dr. Syam Sankar', 'role': 'Faculty Advisor', 'img': 'https://raw.githubusercontent.com/basithalikp/image-cdn/refs/heads/main/acm/syamSankar.png', 'linkedin': 'https://www.linkedin.com/in/syam-sankar-134b70110/', 'github': '#'},
+    'advisor': {'name': 'Dr. Syam Sankar', 'role': 'Faculty Advisor', 'img': static('acm_chapter/images/syamSankar.png'), 'linkedin': 'https://www.linkedin.com/in/syam-sankar-134b70110/', 'github': '#'},
     'core': [
         {'name': 'Bensen Biju', 'role': 'Chairperson', 'img': 'https://i.pravatar.cc/300?u=chair', 'linkedin': '#', 'github': '#'},
         {'name': 'Anna Rose', 'role': 'Vice Chairperson', 'img': 'https://i.pravatar.cc/300?u=vicechair', 'linkedin': '#', 'github': '#'},
@@ -21,7 +22,7 @@ team_data = {
         {'name': 'Drisya A', 'role': 'Treasurer', 'img': 'https://i.pravatar.cc/300?u=treasurer', 'linkedin': '#', 'github': '#'},
     ],
     'tech': [
-        {'name': 'Basith Ali KP', 'role': 'Tech Head', 'img': 'https://raw.githubusercontent.com/basithalikp/image-cdn/refs/heads/main/acm/eid_green.jpg', 'linkedin': 'https://www.linkedin.com/in/basithalikp/', 'github': 'https://github.com/basithalikp'},
+        {'name': 'Basith Ali KP', 'role': 'Tech Head', 'img': static('acm_chapter/images/basithAliKP.jpg'), 'linkedin': 'https://www.linkedin.com/in/basithalikp/', 'github': 'https://github.com/basithalikp'},
         {'name': 'Avaneesh R', 'role': 'Tech Member', 'img': 'https://i.pravatar.cc/300?u=tech1', 'linkedin': '#', 'github': '#'},
     ],
     'design': [
