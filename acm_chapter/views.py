@@ -17,22 +17,22 @@ team_data = {
     'advisor': {'name': 'Dr. Syam Sankar', 'role': 'Faculty Advisor', 'img': static('acm_chapter/images/syamSankar.png'), 'linkedin': 'https://www.linkedin.com/in/syam-sankar-134b70110/', 'github': '#'},
     'core': [
         {'name': 'Bensen Biju', 'role': 'Chairperson', 'img': 'https://i.pravatar.cc/300?u=chair', 'linkedin': '#', 'github': '#'},
-        {'name': 'Anna Rose', 'role': 'Vice Chairperson', 'img': 'https://i.pravatar.cc/300?u=vicechair', 'linkedin': '#', 'github': '#'},
-        {'name': 'Christy Sebastian', 'role': 'Secretary', 'img': 'https://i.pravatar.cc/300?u=secretary', 'linkedin': '#', 'github': '#'},
-        {'name': 'Drisya A', 'role': 'Treasurer', 'img': 'https://i.pravatar.cc/300?u=treasurer', 'linkedin': '#', 'github': '#'},
+        {'name': 'Anna Rose', 'role': 'Vice Chairperson', 'img': static('acm_chapter/images/members/annaRose.jpg'), 'linkedin': 'https://www.linkedin.com/in/anna-rose-8ab870329', 'github': 'https://github.com/annarosepynadath'},
+        {'name': 'Christy Sebastian', 'role': 'Secretary', 'img': static('acm_chapter/images/members/christySebastian.jpg'), 'linkedin': 'https://www.linkedin.com/in/christy-sebastian-3b2582347?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app', 'github': 'https://github.com/Christy303'},
+        {'name': 'Drisya A', 'role': 'Treasurer', 'img': static('acm_chapter/images/members/drisyaA.jpg'), 'linkedin': 'https://www.linkedin.com/in/dhrisya-a-594082339', 'github': 'https://github.com/dhrisyarevathy'},
     ],
     'tech': [
         {'name': 'Basith Ali KP', 'role': 'Tech Head', 'img': static('acm_chapter/images/basithAliKP.jpg'), 'linkedin': 'https://www.linkedin.com/in/basithalikp/', 'github': 'https://github.com/basithalikp'},
-        {'name': 'Avaneesh R', 'role': 'Tech Member', 'img': 'https://i.pravatar.cc/300?u=tech1', 'linkedin': '#', 'github': '#'},
+        {'name': 'Avaneesh R', 'role': 'Tech Member', 'img': static('acm_chapter/images/members/avaneeshR.png'), 'linkedin': 'https://www.linkedin.com/in/avaneesh-r-38183b348?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app', 'github': 'https://github.com/Avaneesh0625x'},
     ],
     'design': [
-        {'name': 'Ayush R Kumar', 'role': 'Design Head', 'img': 'https://i.pravatar.cc/300?u=designhead', 'linkedin': '#', 'github': '#'},
-        {'name': 'Angel SS', 'role': 'Design Member', 'img': 'https://i.pravatar.cc/300?u=design1', 'linkedin': '#', 'github': '#'},
-        {'name': 'Aiswarya A', 'role': 'Design Member', 'img': 'https://i.pravatar.cc/300?u=design1', 'linkedin': '#', 'github': '#'},
-        {'name': 'Aiswary MP', 'role': 'Design Member', 'img': 'https://i.pravatar.cc/300?u=design1', 'linkedin': '#', 'github': '#'},
+        {'name': 'Ayush R Kumar', 'role': 'Design Head', 'img': static('acm_chapter/images/members/ayushRKumar.jpg'), 'linkedin': 'https://www.linkedin.com/in/ayush-r-kumar-055478329/', 'github': 'https://github.com/Ayush2006385'},
+        {'name': 'Angel SS', 'role': 'Design Member', 'img': static('acm_chapter/images/members/angelSS.jpg'), 'linkedin': 'https://www.linkedin.com/in/angel-s-s-988844348?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app', 'github': 'https://github.com/AngelSS921'},
+        {'name': 'Aiswarya A', 'role': 'Design Member', 'img': static('acm_chapter/images/members/aiswaryaA.jpg'), 'linkedin': 'https://www.linkedin.com/in/aiswarya-a-829b1833a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app', 'github': 'https://github.com/aiswarya7033kvk-sys'},
+        {'name': 'Aiswary MP', 'role': 'Design Member', 'img': static('acm_chapter/images/members/aiswaryaMp.jpg'), 'linkedin': 'https://www.linkedin.com/in/aiswarya-mp-29470a336?utm_source=share_via&utm_content=profile&utm_medium=member_android', 'github': 'https://github.com/aiswaryapradeep2005'},
     ],
     'membership': [
-        {'name': 'Afrin Asif', 'role': 'Membership Chair', 'img': 'https://i.pravatar.cc/300?u=mem1', 'linkedin': '#', 'github': '#', 'phone': '919876543210'},
+        {'name': 'Afrin Asif', 'role': 'Membership Chair', 'img': static('acm_chapter/images/members/afrinAsif.jpg'), 'linkedin': 'https://www.linkedin.com/in/afrin-asif-9b4a242a9/', 'github': 'https://github.com/afrinasif', 'phone': '94958 60051'},
         {'name': 'Aditi AM', 'role': 'Membership Advisor', 'img': 'https://i.pravatar.cc/300?u=mem2', 'linkedin': '#', 'github': '#', 'phone': '919876543211'},
     ],
     'media': [
