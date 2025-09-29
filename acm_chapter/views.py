@@ -16,13 +16,14 @@ event_data = [
 team_data = {
     'advisor': {'name': 'Dr. Syam Sankar', 'role': 'Faculty Advisor', 'img': static('acm_chapter/images/syamSankar.png'), 'linkedin': 'https://www.linkedin.com/in/syam-sankar-134b70110/', 'github': '#'},
     'core': [
-        {'name': 'Bensen Biju', 'role': 'Chairperson', 'img': 'https://i.pravatar.cc/300?u=chair', 'linkedin': '#', 'github': '#'},
+        {'name': 'Bensen Biju', 'role': 'Chairperson', 'img': static('acm_chapter/images/members/bensenBiju.jpg'), 'linkedin': 'https://www.linkedin.com/in/bensen-biju-b12b78343', 'github': 'https://github.com/Bensen8806'},
         {'name': 'Anna Rose', 'role': 'Vice Chairperson', 'img': static('acm_chapter/images/members/annaRose.jpg'), 'linkedin': 'https://www.linkedin.com/in/anna-rose-8ab870329', 'github': 'https://github.com/annarosepynadath'},
         {'name': 'Christy Sebastian', 'role': 'Secretary', 'img': static('acm_chapter/images/members/christySebastian.jpg'), 'linkedin': 'https://www.linkedin.com/in/christy-sebastian-3b2582347?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app', 'github': 'https://github.com/Christy303'},
         {'name': 'Drisya A', 'role': 'Treasurer', 'img': static('acm_chapter/images/members/drisyaA.jpg'), 'linkedin': 'https://www.linkedin.com/in/dhrisya-a-594082339', 'github': 'https://github.com/dhrisyarevathy'},
     ],
     'tech': [
-        {'name': 'Basith Ali KP', 'role': 'Tech Head', 'img': static('acm_chapter/images/basithAliKP.jpg'), 'linkedin': 'https://www.linkedin.com/in/basithalikp/', 'github': 'https://github.com/basithalikp'},
+        {'name': 'Basith Ali KP', 'role': 'Tech Head, Web Master', 'img': static('acm_chapter/images/basithAliKP.jpg'), 'linkedin': 'https://www.linkedin.com/in/basithalikp/', 'github': 'https://github.com/basithalikp'},
+        {'name': 'Rida Kareem', 'role': 'Tech Member, Web Dev', 'img': static('acm_chapter/images/members/ridaKareem.jpg'), 'linkedin': 'http://www.linkedin.com/in/rida-kareem', 'github': 'https://github.com/ridakareem'},
         {'name': 'Avaneesh R', 'role': 'Tech Member', 'img': static('acm_chapter/images/members/avaneeshR.png'), 'linkedin': 'https://www.linkedin.com/in/avaneesh-r-38183b348?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app', 'github': 'https://github.com/Avaneesh0625x'},
     ],
     'design': [
@@ -41,10 +42,10 @@ team_data = {
         {'name': 'Arunima N', 'role': 'Media Member', 'img': 'https://i.pravatar.cc/300?u=media1', 'linkedin': '#', 'github': '#'},
     ],
     'content': [
-        {'name': 'Anaswara VK', 'role': 'Content Head', 'img': 'https://i.pravatar.cc/300?u=contenthead', 'linkedin': '#', 'github': '#'},
+        {'name': 'Anaswara VK', 'role': 'Content Head', 'img': static('acm_chapter/images/members/anaswara.jpg'), 'linkedin': 'https://www.linkedin.com/in/anaswara-vk-11b839348?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app', 'github': 'https://github.com/AnaswaraKrishna00'},
         {'name': 'Anagha Gopalakrishnan', 'role': 'Content Writer', 'img': 'https://i.pravatar.cc/300?u=content1', 'linkedin': '#', 'github': '#'},
-        {'name': 'Aryananda T', 'role': 'Content Writer', 'img': 'https://i.pravatar.cc/300?u=content1', 'linkedin': '#', 'github': '#'},
-        {'name': 'Alaina Sanoj', 'role': 'Content Writer', 'img': 'https://i.pravatar.cc/300?u=content1', 'linkedin': '#', 'github': '#'},
+        {'name': 'Aryananda T', 'role': 'Content Writer', 'img': static('acm_chapter/images/members/aryananda.jpg'), 'linkedin': 'https://www.linkedin.com/in/aryananda-t-3bba2b327?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app', 'github': 'https://github.com/24b165-code'},
+        {'name': 'Alaina Sanoj', 'role': 'Content Writer', 'img': static('acm_chapter/images/members/alainaSanoj.jpg'), 'linkedin': 'https://www.linkedin.com/in/alaina-sanoj-a4837b387?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app', 'github': 'https://github.com/alainasanoj00-hue'},
     ]
 }
 
