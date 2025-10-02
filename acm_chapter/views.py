@@ -14,7 +14,7 @@ event_data = [
 
 # --- TEAM DATA ---
 team_data = {
-    'advisor': {'name': 'Dr. Syam Sankar', 'role': 'Faculty Advisor', 'img': static('acm_chapter/images/syamSankar.png'), 'linkedin': 'https://www.linkedin.com/in/syam-sankar-134b70110/', 'github': '#'},
+    'advisor': {'name': 'Dr. Syam Sankar', 'role': 'Faculty Advisor', 'img': static('acm_chapter/images/syamSankar.png'), 'linkedin': 'https://www.linkedin.com/in/syam-sankar-134b70110/', 'github': 'https://syam-nssce.github.io/syamsankar/'},
     'core': [
         {'name': 'Bensen Biju', 'role': 'Chairperson', 'img': static('acm_chapter/images/members/bensenBiju.jpg'), 'linkedin': 'https://www.linkedin.com/in/bensen-biju-b12b78343', 'github': 'https://github.com/Bensen8806'},
         {'name': 'Anna Rose', 'role': 'Vice Chairperson', 'img': static('acm_chapter/images/members/annaRose.jpg'), 'linkedin': 'https://www.linkedin.com/in/anna-rose-8ab870329', 'github': 'https://github.com/annarosepynadath'},

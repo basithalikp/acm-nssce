@@ -57,22 +57,28 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // --- Card Hover Tilt Effect ---
+    // --- Enhanced Card Hover Effects ---
     const cards = document.querySelectorAll('.card');
     cards.forEach(card => {
         card.addEventListener('mousemove', (e) => {
             const rect = card.getBoundingClientRect();
             const x = e.clientX - rect.left - rect.width / 2;
             const y = e.clientY - rect.top - rect.height / 2;
-            const rotateX = -y / 20;
-            const rotateY = x / 20;
+            const rotateX = -y / 15;
+            const rotateY = x / 15;
             
-            card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.05) translateY(-5px)`;
+            card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateZ(20px) scale(1.02)`;
         });
 
         card.addEventListener('mouseleave', () => {
-            card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale(1) translateY(0)';
+            card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) translateZ(0) scale(1)';
         });
+    });
+
+    // --- Add loading animation ---
+    window.addEventListener('load', () => {
+        document.body.classList.add('loaded');
+        requestTick();
     });
 
 });

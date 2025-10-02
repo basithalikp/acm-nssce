@@ -11,6 +11,7 @@
   --font-body: 'Inter', sans-serif;
   --font-subheading: 'Montserrat', sans-serif;
   --font-heading: 'Orbitron', sans-serif;
+  --easeOutBack: cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
 /* --- Global Styles & Resets --- */
@@ -32,6 +33,11 @@ body {
   overflow-x: hidden;
 }
 
+a {
+  text-decoration: none;
+  color: var(--header-color);
+}
+
 /* --- Parallax Background --- */
 .parallax-bg {
   position: fixed;
@@ -45,7 +51,7 @@ body {
   background-size: 100%;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  background-position: center center;
+  background-position: top;
   filter: brightness(0.7);
 }
 
@@ -109,36 +115,68 @@ section.is-visible {
     text-align: center;
 }
 
-/* --- Liquid Glass Effect --- */
+/* --- Enhanced Liquid Glass Effect --- */
 .liquid-glass {
   position: relative;
-  background: rgba(255, 255, 255, 0.05);
-  -webkit-backdrop-filter: blur(5px) saturate(1.165) contrast(1.12);
-  backdrop-filter: blur(5px) saturate(1.165) contrast(1.12);
-  border-radius: 20px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.08);
+  -webkit-backdrop-filter: blur(12px) saturate(1.2) contrast(1.15);
+  backdrop-filter: blur(12px) saturate(1.2) contrast(1.15);
+  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.2),
+    0 4px 16px rgba(106, 27, 154, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.25),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.05);
   overflow: hidden;
+  transition: all 0.3s var(--easeOutBack);
 }
+
+.liquid-glass:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 
+    0 12px 40px rgba(0, 0, 0, 0.3),
+    0 6px 20px rgba(106, 27, 154, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
+}
+
 .liquid-glass::before {
   content: '';
   position: absolute;
-  inset: -20%;
-  background: radial-gradient(ellipse 150% 150% at 50% 50%, rgba(59, 130, 246, 0.2) 0%, transparent 70%);
-  filter: blur(6px);
+  inset: -30%;
+  background: 
+    radial-gradient(ellipse 120% 120% at 30% 20%, rgba(106, 27, 154, 0.15) 0%, transparent 50%),
+    radial-gradient(ellipse 80% 80% at 70% 80%, rgba(48, 63, 159, 0.1) 0%, transparent 50%);
+  filter: blur(8px);
   z-index: 0;
+  animation: glassShimmer 8s ease-in-out infinite;
 }
+
 .liquid-glass > * {
   position: relative;
   z-index: 1;
 }
 
+@keyframes glassShimmer {
+  0%, 100% { opacity: 0.5; transform: scale(1); }
+  50% { opacity: 0.8; transform: scale(1.05); }
+}
+
+
 /* --- Navbar --- */
+
+.navbar-container {
+  display: flex;
+  justify-content: center;
+}
+
 .navbar {
   position: fixed;
   top: 20px;
-  left: 50%;
-  transform: translateX(-50%);
+ 
   width: 90%;
   max-width: 600px;
   display: flex;
@@ -177,7 +215,7 @@ section.is-visible {
   background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
   transform: scaleX(0);
   transform-origin: right;
-  transition: transform 0.4s ease-out;
+  transition: transform 0.4s var(--easeOutBack);
 }
 .nav-link:hover, .nav-link.active {
   color: #fff;
@@ -240,17 +278,54 @@ section.is-visible {
 .horizontal-scroll::-webkit-scrollbar {
   display: none; /* Chrome, Safari, and Opera */
 }
+/* --- Enhanced Cards --- */
 .card {
-  background-color: rgba(30, 30, 30, 0.5);
-  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(15px) saturate(1.2);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
   overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   flex-shrink: 0;
   text-align: left;
+  position: relative;
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.15),
+    0 4px 16px rgba(106, 27, 154, 0.1);
 }
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, 
+    rgba(106, 27, 154, 0.05) 0%, 
+    rgba(48, 63, 159, 0.05) 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 0;
+}
+
 .card:hover {
-  transform: translateY(-10px) scale(1.03);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+  transform: translateY(-12px) scale(1.03);
+  box-shadow: 
+    0 20px 60px rgba(0, 0, 0, 0.25),
+    0 8px 30px rgba(106, 27, 154, 0.2),
+    0 4px 15px rgba(48, 63, 159, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.card:hover::before {
+  opacity: 1;
+}
+
+.card > * {
+  position: relative;
+  z-index: 1;
 }
 .event-card {
   width: 300px;
@@ -307,7 +382,7 @@ section.is-visible {
     font-family: var(--font-subheading);
     font-weight: 600;
     text-decoration: none;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.6s var(--easeOutBack), box-shadow 0.6s var(--easeOutBack);
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 .btn-gradient:hover {
@@ -340,6 +415,11 @@ section.is-visible {
 .benefits-container i {
     color: var(--gradient-start);
     margin-right: 0.8rem;
+}
+
+.join-btn {
+  font-size: large;
+  margin-bottom: 20px;
 }
 
 /* --- Events Page --- */
@@ -413,7 +493,7 @@ section.is-visible {
 .team-socials a {
     color: var(--text-color);
     font-size: 1.5rem;
-    transition: color 0.3s, transform 0.3s;
+    transition: color 0.3s, transform 0.3s var(--easeOutBack);
 }
 .team-socials a:hover {
     color: white;
@@ -421,8 +501,34 @@ section.is-visible {
 }
 
 /* --- About Page --- */
+.about-certificate-container{
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap-reverse;
+  max-height: 80vh;
+}
+.certificate {
+  width: 90vw;
+  max-width: 550px;
+  height: auto;
+}
+.certificate-img {
+  width: inherit;
+  max-width: inherit;
+  height: auto;
+  border-radius: 15px;
+  box-shadow: 10px 10px 10px #0A0A0A;
+  transition: all 0.6s var(--easeOutBack);
+}
+
+.certificate-img:hover {
+  transform: scale(1.05);
+}
+
 .about-section p {
-    max-width: 80ch;
+  padding: 30 0 0 40px;
+  max-width: 550px;
 }
 .vision-mission-container {
     display: grid;
@@ -585,5 +691,35 @@ section.is-visible {
     }
     .event-card {
         width: 260px;
+        }
+    
+    /* Further reduce effects on small screens */
+    .parallax-layer-3 {
+      opacity: 0.3;
+    }
+    
+    .liquid-glass {
+      backdrop-filter: blur(8px);
+    }
+    
+    .navbar {
+      padding: 0.5rem 1rem;
+    }
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  .floating-element,
+  .parallax-grid {
+    animation: none;
+  }
+  
+  .card:hover {
+    transform: none;
+  }
+  
+  section {
+    transition: opacity 0.3s ease;
+    transform: none;
     }
 }

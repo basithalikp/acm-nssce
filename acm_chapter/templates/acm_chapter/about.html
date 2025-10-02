@@ -1,11 +1,16 @@
 {% extends "acm_chapter/base.html" %}
 {% block content %}
+{% load static %}
 
 <section class="page-section about-section">
+    <div class="about-certificate-container">
+    <div class="certificate"><img src="{% static 'acm_chapter/images/certificate.png' %}" class="certificate-img"></div>
+    <div class="about-us">
     <h1 class="page-heading gradient-text">About Us</h1>
     <p class="page-subheading">We are NSS College of Engineering's leading organization for Computer Science and Technology. Our mission is to empower students with practical experience, industry networking opportunities, and a vibrant community of tech enthusiasts.</p>
     <p class="page-subheading">We strive to enrich the journey of NSSCE tech students by offering a dynamic platform for learning, collaboration, and knowledge-sharing through our interactive labs and engaging presentations.</p>
-
+    </div>
+    </div>
     <div class="vision-mission-container">
         <div class="vision-mission-card liquid-glass">
             <h3>Our Vision</h3>
@@ -18,8 +23,9 @@
     </div>
 
     <div class="contact-us-container">
-        <h2 class="contact-heading">Get In Touch</h2>
-        <p>Want to join us or have a question? Contact:</p>
+        <h2 class="contact-heading">Join Us</h2>
+        <button class="btn-gradient join-btn"><a href="https://services.acm.org/public/qj/proflevel/proflevel_control.cfm?level=3&country=India&form_type=Student&promo=LEVEL&pay=DD">Join Now</a></button>
+        <h3 style="font-family: 'Inter';">Any concerns?</h3>
         <div class="contact-grid">
             {% for advisor in advisors %}
             <div class="contact-person">
