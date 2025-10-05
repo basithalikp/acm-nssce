@@ -128,7 +128,7 @@ section.is-visible {
     0 4px 16px rgba(106, 27, 154, 0.1),
     inset 0 1px 0 rgba(255, 255, 255, 0.25),
     inset 0 -1px 0 rgba(255, 255, 255, 0.05);
-  overflow: hidden;
+  overflow: visible;
   transition: all 0.3s var(--easeOutBack);
 }
 
@@ -153,6 +153,7 @@ section.is-visible {
   filter: blur(8px);
   z-index: 0;
   animation: glassShimmer 8s ease-in-out infinite;
+  pointer-events: none;
 }
 
 .liquid-glass > * {
@@ -171,12 +172,12 @@ section.is-visible {
 .navbar-container {
   display: flex;
   justify-content: center;
+  overflow: visible;
 }
 
 .navbar {
   position: fixed;
   top: 20px;
- 
   width: 90%;
   max-width: 600px;
   display: flex;
@@ -184,6 +185,7 @@ section.is-visible {
   align-items: center;
   padding: 0.5rem 1.5rem;
   z-index: 1000;
+  overflow: visible;
 }
 
 .nav-logo img {
@@ -194,6 +196,7 @@ section.is-visible {
 .nav-links {
   display: flex;
   gap: 1.5rem;
+  align-items: center;
 }
 
 .nav-link {
@@ -230,8 +233,13 @@ section.is-visible {
   color: var(--header-color);
   font-size: 1.5rem;
   cursor: pointer;
+  position: relative;
+  z-index: 10;
+  pointer-events: auto;
+  background: none;
+  border: none;
+  outline: none;
 }
-
 /* --- Hero Section --- */
 .hero-section {
     min-height: 80vh;
@@ -629,6 +637,8 @@ section.is-visible {
 .footer-contact {
   margin-bottom: 1rem;
   font-size: 0.9rem;
+  display: flex;
+  justify-content: center;
 }
 .footer-contact a {
   color: var(--gradient-end);
@@ -637,6 +647,8 @@ section.is-visible {
 .footer-copyright {
   font-size: 0.9rem;
   color: #888;
+  display: flex;
+  justify-content: center;
 }
 
 /* --- Responsive Design --- */
@@ -644,29 +656,53 @@ section.is-visible {
   .nav-links {
     display: none;
     position: absolute;
-    top: 100%;
+    top: calc(100% + 10px);
     left: 0;
-    width: 100%;
-    background: rgba(10, 10, 10, 0.9);
+    right: 0;
     flex-direction: column;
     align-items: center;
+    gap: 0;
+    background: rgba(10, 10, 10, 0.95);
     padding: 1rem 0;
-    border-bottom-left-radius: 20px;
-    border-bottom-right-radius: 20px;
+    border-radius: 20px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    z-index: 999;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
   }
   .nav-links.active {
     display: flex;
+    max-height: 300px;
+  }
+  .nav-link {
+    padding: 0.8rem 0;
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  .nav-link:last-child {
+    border-bottom: none;
   }
   .hamburger {
     display: block;
-    background:none;
-    border: none;
-    outline: none;
   }
   .navbar {
-    max-width: 100%;
-    width: calc(100% - 2rem);
+    max-width: 400px;
+    width: calc(100% - 4rem);
     top: 1rem;
+    padding: 0.3rem 1rem;
+  }
+  .navbar.liquid-glass {
+    border-radius: 16px;
+    backdrop-filter: blur(8px) saturate(1.1);
+  }
+  .nav-logo img {
+    height: 32px;
+  }
+  .hamburger {
+    font-size: 1.2rem;
   }
   .deck-header {
       flex-direction: column;
@@ -703,7 +739,16 @@ section.is-visible {
     }
     
     .navbar {
-      padding: 0.5rem 1rem;
+      padding: 0.3rem 0.8rem;
+      top: 0.5rem;
+      max-width: 350px;
+      width: calc(100% - 3rem);
+    }
+    .nav-logo img {
+      height: 28px;
+    }
+    .hamburger {
+      font-size: 1.1rem;
     }
 }
 

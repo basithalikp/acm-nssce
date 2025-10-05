@@ -1,6 +1,7 @@
-// main.js
+console.log('main.js loaded');
 
 document.addEventListener('DOMContentLoaded', () => {
+    console.log('DOM loaded, initializing scripts...');
 
     // --- Parallax Effect on Background ---
     const parallaxBg = document.querySelector('.parallax-bg');
@@ -16,9 +17,35 @@ document.addEventListener('DOMContentLoaded', () => {
     const navLinks = document.querySelector('.nav-links');
 
     if (hamburger && navLinks) {
-        hamburger.addEventListener('click', () => {
+        console.log('Hamburger and nav-links found, setting up event listeners...');
+        console.log('Hamburger element:', hamburger);
+        console.log('Nav-links element:', navLinks);
+        
+        hamburger.addEventListener('click', (e) => {
+            e.preventDefault();
+            console.log('Hamburger clicked');   
             navLinks.classList.toggle('active');
+            console.log('Nav links active state:', navLinks.classList.contains('active'));
+            console.log('Nav links classes:', navLinks.className);
         });
+
+        // Close menu when clicking on nav links
+        const navLinkElements = navLinks.querySelectorAll('.nav-link');
+        navLinkElements.forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                console.log('Menu closed after nav link click');
+            });
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!hamburger.contains(e.target) && !navLinks.contains(e.target)) {
+                navLinks.classList.remove('active');
+            }
+        });
+    } else {
+        console.log('Hamburger or nav-links not found:', { hamburger, navLinks });
     }
 
     // --- Smooth Scrolling for Navbar Links ---
@@ -27,9 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
             e.preventDefault();
             const targetElement = document.querySelector(this.getAttribute('href'));
             if (targetElement) {
-                targetElement.scrollIntoView({
-                    behavior: 'smooth'
-                });
+                targetElement.scrollIntoView({ behavior: 'smooth' });
             }
         });
     });
@@ -37,12 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- Scroll Animations (Fade-in sections) ---
     const sections = document.querySelectorAll('section');
     if (sections.length > 0) {
-        const observerOptions = {
-            root: null,
-            rootMargin: '0px',
-            threshold: 0.1
-        };
-
+        const observerOptions = { root: null, rootMargin: '0px', threshold: 0.1 };
         const sectionObserver = new IntersectionObserver((entries, observer) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -51,10 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             });
         }, observerOptions);
-
-        sections.forEach(section => {
-            sectionObserver.observe(section);
-        });
+        sections.forEach(section => sectionObserver.observe(section));
     }
 
     // --- Enhanced Card Hover Effects ---
@@ -78,7 +95,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- Add loading animation ---
     window.addEventListener('load', () => {
         document.body.classList.add('loaded');
-        requestTick();
+        if (typeof requestTick === "function") requestTick();
     });
 
 });
