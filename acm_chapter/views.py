@@ -30,7 +30,7 @@ team_data = {
         {'name': 'Ayush R Kumar', 'role': 'Design Head', 'img': static('acm_chapter/images/members/ayushRKumar.jpg'), 'linkedin': 'https://www.linkedin.com/in/ayush-r-kumar-055478329/', 'github': 'https://github.com/Ayush2006385'},
         {'name': 'Angel SS', 'role': 'Design Member', 'img': static('acm_chapter/images/members/angelSS.jpg'), 'linkedin': 'https://www.linkedin.com/in/angel-s-s-988844348?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app', 'github': 'https://github.com/AngelSS921'},
         {'name': 'Aiswarya A', 'role': 'Design Member', 'img': static('acm_chapter/images/members/aiswaryaA.jpg'), 'linkedin': 'https://www.linkedin.com/in/aiswarya-a-829b1833a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app', 'github': 'https://github.com/aiswarya7033kvk-sys'},
-        {'name': 'Aiswary MP', 'role': 'Design Member', 'img': static('acm_chapter/images/members/aiswaryaMp.jpg'), 'linkedin': 'https://www.linkedin.com/in/aiswarya-mp-29470a336?utm_source=share_via&utm_content=profile&utm_medium=member_android', 'github': 'https://github.com/aiswaryapradeep2005'},
+        {'name': 'Aiswarya MP', 'role': 'Design Member', 'img': static('acm_chapter/images/members/aiswaryaMp.jpg'), 'linkedin': 'https://www.linkedin.com/in/aiswarya-mp-29470a336?utm_source=share_via&utm_content=profile&utm_medium=member_android', 'github': 'https://github.com/aiswaryapradeep2005'},
     ],
     'membership': [
         {'name': 'Afrin Asif', 'role': 'Membership Chair', 'img': static('acm_chapter/images/members/afrinAsif.jpg'), 'linkedin': 'https://www.linkedin.com/in/afrin-asif-9b4a242a9/', 'github': 'https://github.com/afrinasif', 'phone': '94958 60051'},
