@@ -656,6 +656,34 @@ section.is-visible {
   justify-content: center;
 }
 
+/* --- Dynamic Background --- */
+#dynamic-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: linear-gradient(135deg, 
+    var(--bg-color) 0%, 
+    rgba(26, 10, 42, 1) 50%, 
+    rgba(15, 20, 45, 1) 100%);
+  pointer-events: none;
+}
+
+/* Subtle gradient overlay for depth */
+#dynamic-bg::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(ellipse at 20% 20%, rgba(106, 27, 154, 0.15) 0%, transparent 50%),
+              radial-gradient(ellipse at 80% 80%, rgba(48, 63, 159, 0.1) 0%, transparent 50%);
+  pointer-events: none;
+}
+
 /* --- Responsive Design --- */
 @media (max-width: 768px) {
   .nav-links {

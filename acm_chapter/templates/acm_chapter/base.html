@@ -21,7 +21,9 @@
 
 </head>
 <body>
-
+    <!-- Dynamic Background Canvas -->
+    <canvas id="dynamic-bg"></canvas>
+    
     <header>
         <div class="navbar-container">
         <nav class="navbar liquid-glass">
@@ -40,10 +42,11 @@
         </nav>
     </div>
     </header>
-
     <main class="content-wrapper">
         {% block content %}{% endblock %}
     </main>
+
+    
 
     <footer class="site-footer">
         <div class="footer-content">
