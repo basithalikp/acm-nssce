@@ -33,17 +33,17 @@ team_data = {
         {'name': 'Aiswarya MP', 'role': 'Design Member', 'img': static('acm_chapter/images/members/aiswaryaMp.jpg'), 'linkedin': 'https://www.linkedin.com/in/aiswarya-mp-29470a336?utm_source=share_via&utm_content=profile&utm_medium=member_android', 'github': 'https://github.com/aiswaryapradeep2005'},
     ],
     'membership': [
-        {'name': 'Afrin Asif', 'role': 'Membership Chair', 'img': static('acm_chapter/images/members/afrinAsif.jpg'), 'linkedin': 'https://www.linkedin.com/in/afrin-asif-9b4a242a9/', 'github': 'https://github.com/afrinasif', 'phone': '94958 60051'},
-        {'name': 'Aditi AM', 'role': 'Membership Advisor', 'img': 'https://i.pravatar.cc/300?u=mem2', 'linkedin': '#', 'github': '#', 'phone': '919876543211'},
+        {'name': 'Afrin Asif', 'role': 'Membership Chair', 'img': static('acm_chapter/images/members/afrinAsif.jpg'), 'linkedin': 'https://www.linkedin.com/in/afrin-asif-9b4a242a9/', 'github': 'https://github.com/afrinasif', 'phone': '919495860051'},
+        {'name': 'Aditi AM', 'role': 'Membership Advisor', 'img': static('acm_chapter/images/members/placeholderMember.jpg'), 'linkedin': '#', 'github': '#', 'phone': '919876543211'},
     ],
     'media': [
-        {'name': 'Anulakshmi C', 'role': 'Media Head', 'img': 'https://i.pravatar.cc/300?u=mediahead', 'linkedin': '#', 'github': '#'},
-        {'name': 'Amna Sherin VA', 'role': 'Media Member', 'img': 'https://i.pravatar.cc/300?u=media1', 'linkedin': '#', 'github': '#'},
-        {'name': 'Arunima N', 'role': 'Media Member', 'img': 'https://i.pravatar.cc/300?u=media1', 'linkedin': '#', 'github': '#'},
+        {'name': 'Anulakshmi C', 'role': 'Media Head', 'img': static('acm_chapter/images/members/placeholderMember.jpg'), 'linkedin': '#', 'github': '#'},
+        {'name': 'Amna Sherin VA', 'role': 'Media Member', 'img': static('acm_chapter/images/members/placeholderMember.jpg'), 'linkedin': '#', 'github': '#'},
+        {'name': 'Arunima N', 'role': 'Media Member', 'img': static('acm_chapter/images/members/placeholderMember.jpg'), 'linkedin': '#', 'github': '#'},
     ],
     'content': [
         {'name': 'Anaswara VK', 'role': 'Content Head', 'img': static('acm_chapter/images/members/anaswara.jpg'), 'linkedin': 'https://www.linkedin.com/in/anaswara-vk-11b839348?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app', 'github': 'https://github.com/AnaswaraKrishna00'},
-        {'name': 'Anagha Gopalakrishnan', 'role': 'Content Writer', 'img': 'https://i.pravatar.cc/300?u=content1', 'linkedin': '#', 'github': '#'},
+        {'name': 'Anagha Gopalakrishnan', 'role': 'Content Writer', 'img': static('acm_chapter/images/members/placeholderMember.jpg'), 'linkedin': '#', 'github': '#'},
         {'name': 'Aryananda T', 'role': 'Content Writer', 'img': static('acm_chapter/images/members/aryananda.jpg'), 'linkedin': 'https://www.linkedin.com/in/aryananda-t-3bba2b327?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app', 'github': 'https://github.com/24b165-code'},
         {'name': 'Alaina Sanoj', 'role': 'Content Writer', 'img': static('acm_chapter/images/members/alainaSanoj.jpg'), 'linkedin': 'https://www.linkedin.com/in/alaina-sanoj-a4837b387?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app', 'github': 'https://github.com/alainasanoj00-hue'},
     ]
@@ -80,6 +80,6 @@ def about_view(request):
     context = {
         'page': 'about',
         'advisors': team_data['membership'],
-        'chairperson': {**team_data['core'][0], 'phone': '919876543212'}  # Add dummy phone
+        'chairperson': {**team_data['core'][0], 'phone': '918547421918'}
     }
     return render(request, 'acm_chapter/about.html', context)
